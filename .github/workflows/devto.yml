@@ -10,12 +10,14 @@
 # See https://help.github.com/en/actions/configuring-and-managing-workflows/creating-and-storing-encrypted-secrets#creating-encrypted-secrets
 # for more information about GitHub secrets.
 
-name: publish
+name: Publish to Dev.to
 on:
   push:
-    branches: [main]
-  pull_request:
-    branches: [main]
+    tags:
+      - 'devto-*'  # devto-v1.0, devto-20240608
+
+permissions:
+  contents: write
 
 jobs:
   publish:
